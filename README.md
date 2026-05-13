@@ -4,7 +4,7 @@
 >
 > Terminal coding agent for DeepSeek V4. Runs from the `deepseek` command via your local Ollama instance (no GPU needed — inference offloaded to Ollama Cloud). Streams reasoning blocks, edits local workspaces with approval gates, and includes an auto mode that chooses both model and thinking level per turn.
 >
-> **Setup:** `ollama pull deepseek-v4-pro:cloud` + point `~/.deepseek/config.toml` at `provider = "ollama"`. No DeepSeek API key required.
+> **Setup:** `ollama pull deepseek-v4-pro:cloud` + point `~/.deepseek/config.toml` at `provider = "ollama"` + `ollama signin`. No DeepSeek API key required — just an Ollama account.
 
 [简体中文 README](README.zh-CN.md)
 
