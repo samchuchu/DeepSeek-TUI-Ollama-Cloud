@@ -2,15 +2,18 @@
 
 > **Fork of [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI)** — pre-configured for **Ollama Cloud** with `deepseek-v4-pro:cloud`.
 
-Terminal coding agent for DeepSeek V4. Runs from the `deepseek` command via your local Ollama instance — no GPU needed, inference is offloaded to Ollama Cloud. Streams reasoning blocks, edits local workspaces with approval gates, and includes an auto mode that chooses both model and thinking level per turn.
+Terminal coding agent for DeepSeek V4, running through Ollama Cloud. No GPU needed — inference is offloaded to Ollama. Streams reasoning blocks, edits local workspaces, and includes auto mode that chooses the best model + thinking level per turn.
+
+🙏 Huge thanks to [@Hmbown](https://github.com/Hmbown) and all [contributors](https://github.com/Hmbown/DeepSeek-TUI/graphs/contributors) for building this fantastic tool.
 
 ## What's Different
 
-This fork is wired to Ollama Cloud instead of DeepSeek's API:
-
-- **Provider:** `ollama` (not `deepseek`)
-- **Model:** `deepseek-v4-pro:cloud` via Ollama Cloud
-- **No DeepSeek API key needed** — just an [Ollama account](https://ollama.com)
+| | Upstream | This Fork |
+|---|---|---|
+| Provider | DeepSeek API | Ollama Cloud |
+| Model | `deepseek-v4-pro` | `deepseek-v4-pro:cloud` |
+| API key | DeepSeek | Ollama account |
+| GPU needed | No | No |
 
 ## Setup
 
@@ -21,10 +24,10 @@ npm install -g deepseek-tui
 # 2. Pull the cloud model
 ollama pull deepseek-v4-pro:cloud
 
-# 3. Sign in to Ollama (if not already)
+# 3. Sign in to Ollama
 ollama signin
 
-# 4. Configure
+# 4. Create config
 mkdir -p ~/.deepseek
 cat > ~/.deepseek/config.toml << 'TOML'
 provider = "ollama"
@@ -34,8 +37,8 @@ default_text_model = "deepseek-v4-pro:cloud"
 base_url = "http://localhost:11434/v1"
 TOML
 
-# 5. Run
+# 5. Launch
 deepseek
 ```
 
-For full documentation, see the [upstream repo](https://github.com/Hmbown/DeepSeek-TUI).
+For full documentation, features, and advanced configuration, head to the [upstream repo](https://github.com/Hmbown/DeepSeek-TUI).
