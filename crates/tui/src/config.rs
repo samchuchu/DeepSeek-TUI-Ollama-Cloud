@@ -1568,9 +1568,14 @@ impl Config {
                 "Fireworks AI API key not found. Run 'deepseek auth set --provider fireworks', \
                  set FIREWORKS_API_KEY, or add [providers.fireworks] api_key in ~/.deepseek/config.toml."
             ),
+            // Ollama Cloud (non-localhost) requires an API key like other hosted providers.
+            // Self-hosted Ollama on localhost does not (handled by base_url_uses_local_host above).
+            ApiProvider::Ollama => anyhow::bail!(
+                "Ollama API key not found. Run 'deepseek auth set --provider ollama', \
+                 set OLLAMA_API_KEY, or add api_key under [providers.ollama] in ~/.deepseek/config.toml."
+            ),
             // Self-hosted deployments commonly run without auth on localhost.
-            // Return an empty key and let the client omit the Authorization header.
-            ApiProvider::Sglang | ApiProvider::Vllm | ApiProvider::Ollama => Ok(String::new()),
+            ApiProvider::Sglang | ApiProvider::Vllm => Ok(String::new()),
         }
     }
 

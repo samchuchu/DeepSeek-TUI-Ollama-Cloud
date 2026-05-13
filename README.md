@@ -1,6 +1,10 @@
-# DeepSeek TUI
+# DeepSeek TUI (Ollama Cloud Edition)
 
-> Terminal coding agent for DeepSeek V4. It runs from the `deepseek` command, streams reasoning blocks, edits local workspaces with approval gates, and includes an auto mode that chooses both model and thinking level per turn.
+> **Fork of [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI)** — pre-configured for **Ollama Cloud** with `deepseek-v4-pro:cloud`.
+>
+> Terminal coding agent for DeepSeek V4. Runs from the `deepseek` command via your local Ollama instance (no GPU needed — inference offloaded to Ollama Cloud). Streams reasoning blocks, edits local workspaces with approval gates, and includes an auto mode that chooses both model and thinking level per turn.
+>
+> **Setup:** `ollama pull deepseek-v4-pro:cloud` + point `~/.deepseek/config.toml` at `provider = "ollama"`. No DeepSeek API key required.
 
 [简体中文 README](README.zh-CN.md)
 
